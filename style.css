@@ -77,10 +77,18 @@ body *{
     z-index: 1;
     transform: translateY(-50%);
     cursor: pointer;
+
+    animation: slider-light-down 0.4s;
 }
+.switch button:hover{
+    outline: 8px solid var(--social-link-hover);
+}
+
 html.light .switch button{
-    right: 0;
+/*    right: 0;
     left: initial;
+    */
+    animation: slider-light-up 0.4s forwards;
 }
 .switch span{
     display: block;
@@ -153,6 +161,25 @@ ul li a:hover{
 
     .light{
         --bg-url: url(./assets/bg-desktop-light.jpg);
+    }
+}
+
+@keyframes slider-light-up{
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;;
+    }
+
+}
+
+@keyframes slider-light-down{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
     }
 }
 
